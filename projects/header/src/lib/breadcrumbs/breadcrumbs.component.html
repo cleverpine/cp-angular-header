@@ -1,0 +1,18 @@
+<div class="breadcrumbs-container">
+  <ng-container *ngFor="let item of breadcrumbsList; let isLast = last">
+    <!-- Display the proper html depending if the element is last or not -->
+    <ng-container
+      *ngTemplateOutlet="isLast ? lastElement : breadcrumbTemp; context:{ breadcrumb: item}">
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-template #breadcrumbTemp let-breadcrumb="breadcrumb">
+  <a class="breadcrumb-item gray" [routerLink]="'/' + breadcrumb.href" [title]="breadcrumb.title | translate: breadcrumb.paramValues">
+    {{breadcrumb.title | translate: breadcrumb.paramValues}}</a>
+  <span> / </span>
+</ng-template>
+
+<ng-template #lastElement let-breadcrumb="breadcrumb">
+  <span [title]="breadcrumb.title | translate: breadcrumb.paramValues" class="breadcrumb-item">{{breadcrumb.title | translate: breadcrumb.paramValues}}</span>
+</ng-template>

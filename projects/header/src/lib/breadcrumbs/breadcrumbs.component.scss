@@ -1,0 +1,14 @@
+@import "../assets/styles/colors.scss";
+@import "../assets/styles/common.scss";
+
+.breadcrumb-item {
+  color: $text-color-white;
+
+  &.gray {
+    color: $text-color-disabled;
+
+    &:hover {
+      color: $button-hover-color;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import "./assets/styles/colors.scss";
+@import "./assets/styles/common.scss";
+
+.header {
+  width: 100%;
+  height: 41px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 16px;
+  background-color: $layout-dark-color;
+  color: $text-color-white;
+
+  .left,
+  .right,
+  .profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .header-img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    background-color: $layout-dark-color;
+
+    &.hover {
+      display: none;
+    }
+
+  }
+
+  .header-logo {
+    background: url('./assets/images/logo.svg') no-repeat center center;
+  }
+
+  .profile-img {
+    background: url('./assets/images/profile.svg') no-repeat center center;
+  }
+
+  .profile-img-hover {
+    background: url('./assets/images/profile-hover.svg') no-repeat center center;
+  }
+
+  .logout-img {
+    background: url('./assets/images/logout.svg') no-repeat center center;
+  }
+
+  .logout-img-hover {
+    background: url('./assets/images/logout-hover.svg') no-repeat center center;
+  }
+
+  .toggle-img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    background: url(./assets/images/nav.svg);
+  }
+
+  .toggle-img:hover {
+    background: url(./assets/images/nav-hover.svg);
+  }
+
+  .header-image-wrapper {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background-color: $layout-dark-color;
+
+    &:hover {
+      fill: $button-hover-color;
+
+      .default {
+        display: none;
+      }
+
+      .hover {
+        display: block;
+      }
+    }
+  }
+
+  .profile-wrapper {
+    &:hover {
+      .default {
+        display: none;
+      }
+
+      .hover {
+        display: block;
+      }
+    }
+  }
+
+  .separator {
+    width: 1px;
+    align-self: stretch;
+    background-color: $text-color-white;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .profile-name {
+      display: none;
+    }
+
+    .breadcrumbs-wrapper {
+      display: none;
+    }
+  }
+}
