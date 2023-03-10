@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
-  profileName: string | undefined = 'asd';
+  profileName: string | undefined;
 
-  logout() {
-    console.log('logged out');
+  headerTitle: string | undefined;
 
-  }
+  onLogout() { }
 }

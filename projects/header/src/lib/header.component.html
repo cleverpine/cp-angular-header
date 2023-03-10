@@ -3,11 +3,11 @@
     <button class="header-image-wrapper" (click)="toggleSideNav()">
       <div class="toggle-img"></div>
     </button>
-    <a class="header-image-wrapper" [routerLink]="['']">
+    <a class="header-image-wrapper" [routerLink]="[ homePageHref ]">
       <div class="header-img header-logo"></div>
     </a>
     <span class="title">
-      <ng-content select="[title]"></ng-content>
+      {{ title }}
     </span>
     <span class="separator"></span>
     <div class="breadcrumbs-wrapper">
@@ -16,7 +16,7 @@
   </div>
   <div class="right" *ngIf="profileName">
     <div class="right">
-      <a [routerLink]="['/user-profile']" class="profile-wrapper">
+      <a [routerLink]="[ profilePageHref ]" class="profile-wrapper">
         <span class="profile-name">{{profileName}}</span>
         <div class="header-image-wrapper">
           <div class="header-img profile-img default"></div>
