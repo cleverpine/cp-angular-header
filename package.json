@@ -1,5 +1,5 @@
 {
-  "name": "header-component",
+  "name": "@lht-header",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
