@@ -7,7 +7,7 @@ import { DEFAULT_HOME_PAGE_HREF, DEFAULT_PROFILE_PAGE_HREF } from './constants';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() isShowingSideNav!: boolean;
+  @Input() isShowingSideNav: boolean = false;
 
   @Input() profileName: string | undefined;
 
