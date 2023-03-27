@@ -1,27 +1,49 @@
 # HeaderComponent
+This is an Angular library for a header component.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Params
+`isShowingSideNav` - A boolean that indicates whether or not the side navigation is currently being displayed. Default value is false.
+`profileName` - A string that represents the name of the user profile. If not specified, the profile section will not be displayed.
+`title` - A string that represents the title to be displayed in the header.
+`profilePageHref` - A string that represents the URL for the user profile page. Default value is DEFAULT_PROFILE_PAGE_HREF.
+`homePageHref` - A string that represents the URL for the home page. Default value is DEFAULT_HOME_PAGE_HREF.
 
-## Development server
+`toggledSideNav` - An event emitter that is fired when the side navigation is toggled.
+`logout` - An event emitter that is fired when the user logs out.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Usage
+To use this component, first install the library:
 
-## Code scaffolding
+`npm install --save @lht/header`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Then, import it into your module:
 
-## Build
+```typescript
+import { HeaderModule } from '@lht/header';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderModule
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+Finally, use it in your component template:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```scss
+<lht-header
+  [isShowingSideNav]="isShowingSideNav"
+  [profileName]="profileName"
+  [title]="title"
+  [profilePageHref]="profilePageHref"
+  [homePageHref]="homePageHref"
+  (toggledSideNav)="onToggledSideNav()"
+  (logout)="onLogout()">
+</lht-header>
+```
