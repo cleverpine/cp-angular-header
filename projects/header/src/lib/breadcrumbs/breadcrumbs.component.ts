@@ -13,6 +13,15 @@ export class BreadcrumbsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
+    if (
+      !this.activatedRoute ||
+      !this.activatedRoute.root ||
+      !this.activatedRoute.root.children ||
+      this.activatedRoute.root.children.length === 0
+    ) {
+      return;
+    }
+
     this.showBreadcrumb();
 
     this.router.events.subscribe((data) => {
@@ -45,18 +54,12 @@ export class BreadcrumbsComponent implements OnInit {
   }
 
   copyBreadCrumbs(): void {
-    if (
-      !this.activatedRoute ||
-      !this.activatedRoute.root ||
-      !this.activatedRoute.root.children
-    ) {
-      return;
-    }
-
     try {
       // get last route child
-      let child = this.activatedRoute.root.children[0];
-      while (child.children[0]) {
+      let child = this.activatedRoute.root.children
+        ? this.activatedRoute.root.children[0]
+        : null;
+      while (child && child.children && child.children.length > 0) {
         child = child.children[0];
       }
 
