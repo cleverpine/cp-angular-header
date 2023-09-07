@@ -1,9 +1,13 @@
 <header class="header">
   <div class="left">
-    <button class="header-image-wrapper" (click)="toggleSideNav()">
+    <button
+      class="header-image-wrapper"
+      (click)="toggleSideNav()"
+      *ngIf="toggledSideNav.observed"
+    >
       <div class="toggle-img"></div>
     </button>
-    <a class="header-image-wrapper" [routerLink]="[ homePageHref ]">
+    <a class="header-image-wrapper" [routerLink]="[homePageHref]">
       <div class="header-img header-logo"></div>
     </a>
     <span class="title">
@@ -16,8 +20,8 @@
   </div>
   <div class="right" *ngIf="profileName">
     <div class="right">
-      <a [routerLink]="[ profilePageHref ]" class="profile-wrapper">
-        <span class="profile-name">{{profileName}}</span>
+      <a [routerLink]="[profilePageHref]" class="profile-wrapper">
+        <span class="profile-name">{{ profileName }}</span>
         <div class="header-image-wrapper">
           <div class="header-img profile-img default"></div>
           <div class="header-img profile-img-hover hover"></div>

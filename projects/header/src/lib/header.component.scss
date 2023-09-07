@@ -21,7 +21,7 @@
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1;
   }
 
   .header-img {
@@ -33,27 +33,26 @@
     &.hover {
       display: none;
     }
-
   }
 
   .header-logo {
-    background: url('./assets/images/logo.svg') no-repeat center center;
+    background: url("./assets/images/logo.svg") no-repeat center center;
   }
 
   .profile-img {
-    background: url('./assets/images/profile.svg') no-repeat center center;
+    background: url("./assets/images/profile.svg") no-repeat center center;
   }
 
   .profile-img-hover {
-    background: url('./assets/images/profile-hover.svg') no-repeat center center;
+    background: url("./assets/images/profile-hover.svg") no-repeat center center;
   }
 
   .logout-img {
-    background: url('./assets/images/logout.svg') no-repeat center center;
+    background: url("./assets/images/logout.svg") no-repeat center center;
   }
 
   .logout-img-hover {
-    background: url('./assets/images/logout-hover.svg') no-repeat center center;
+    background: url("./assets/images/logout-hover.svg") no-repeat center center;
   }
 
   .toggle-img {
@@ -89,6 +88,13 @@
 
   .profile-wrapper {
     &:hover {
+      text-decoration: none;
+
+      .profile-name {
+        color: $text-color-white;
+        cursor: default;
+      }
+
       .default {
         display: none;
       }
