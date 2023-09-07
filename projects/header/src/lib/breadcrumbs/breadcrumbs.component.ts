@@ -45,6 +45,14 @@ export class BreadcrumbsComponent implements OnInit {
   }
 
   copyBreadCrumbs(): void {
+    if (
+      !this.activatedRoute ||
+      !this.activatedRoute.root ||
+      !this.activatedRoute.root.children
+    ) {
+      return;
+    }
+
     try {
       // get last route child
       let child = this.activatedRoute.root.children[0];
