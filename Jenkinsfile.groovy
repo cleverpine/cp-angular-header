@@ -2,7 +2,7 @@
 
 pipeline {
   agent {
-    label 'node16'
+    label 'node18'
   }
 
   options {
