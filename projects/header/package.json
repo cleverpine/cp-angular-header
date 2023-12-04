@@ -1,5 +1,5 @@
 {
-  "name": "@lht/header",
+  "name": "cp-lht-header",
   "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^17.0.5",
